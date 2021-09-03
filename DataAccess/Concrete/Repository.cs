@@ -20,27 +20,29 @@ namespace DataAccess.Concrete
         }
         public int Delete(T p)
         {
-            throw new NotImplementedException();
+            _object.Remove(p);
+            return blogContext.SaveChanges();
         }
 
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            return _object.Find(id);
         }
 
         public int Insert(T p)
         {
-            throw new NotImplementedException();
+            _object.Add(p);
+            return blogContext.SaveChanges();
         }
 
         public List<T> List()
         {
-            throw new NotImplementedException();
+            return _object.ToList();
         }
 
         public int Update(T p)
         {
-            throw new NotImplementedException();
+            return blogContext.SaveChanges();
         }
     }
 }
