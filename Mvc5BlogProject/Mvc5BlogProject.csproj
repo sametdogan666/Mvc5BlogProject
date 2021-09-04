@@ -340,6 +340,9 @@
     <Content Include="Views\Blog\OtherFeaturedPosts.cshtml" />
     <Content Include="Views\Blog\MailSubscribe.cshtml" />
     <Content Include="Views\About\Footer.cshtml" />
+    <Content Include="Views\Blog\BlogDetails.cshtml" />
+    <Content Include="Views\Blog\BlogCover.cshtml" />
+    <Content Include="Views\Blog\BlogReadAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
