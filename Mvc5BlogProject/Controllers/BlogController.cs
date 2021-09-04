@@ -13,5 +13,10 @@ namespace Mvc5BlogProject.Controllers
         {
             return View();
         }
+
+        public PartialViewResult BlogList()
+        {
+            return PartialView();
+        }
     }
 }
