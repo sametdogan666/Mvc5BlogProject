@@ -18,5 +18,10 @@ namespace Mvc5BlogProject.Controllers
         {
             return PartialView();
         }
+
+        public PartialViewResult FeaturedPosts()
+        {
+            return PartialView();
+        }
     }
 }

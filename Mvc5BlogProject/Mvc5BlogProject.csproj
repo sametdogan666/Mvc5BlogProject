@@ -335,6 +335,7 @@
     <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\BlogList.cshtml" />
+    <Content Include="Views\Blog\FeaturedPosts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
