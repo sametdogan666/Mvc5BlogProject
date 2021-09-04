@@ -336,6 +336,7 @@
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\BlogList.cshtml" />
     <Content Include="Views\Blog\FeaturedPosts.cshtml" />
+    <Content Include="Views\Blog\OtherFeaturedPosts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
