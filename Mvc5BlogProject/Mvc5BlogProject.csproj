@@ -337,6 +337,7 @@
     <Content Include="Views\Blog\BlogList.cshtml" />
     <Content Include="Views\Blog\FeaturedPosts.cshtml" />
     <Content Include="Views\Blog\OtherFeaturedPosts.cshtml" />
+    <Content Include="Views\Blog\MailSubscribe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
