@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
@@ -346,6 +347,8 @@
     <Content Include="Views\Blog\BlogReadAll.cshtml" />
     <Content Include="Views\Comment\CommentList.cshtml" />
     <Content Include="Views\Comment\LeaveComment.cshtml" />
+    <Content Include="Views\Author\AuthorAbout.cshtml" />
+    <Content Include="Views\Author\AuthorPopularPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
