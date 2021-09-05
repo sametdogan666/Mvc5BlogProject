@@ -130,6 +130,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -343,6 +344,8 @@
     <Content Include="Views\Blog\BlogDetails.cshtml" />
     <Content Include="Views\Blog\BlogCover.cshtml" />
     <Content Include="Views\Blog\BlogReadAll.cshtml" />
+    <Content Include="Views\Comment\CommentList.cshtml" />
+    <Content Include="Views\Comment\LeaveComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
