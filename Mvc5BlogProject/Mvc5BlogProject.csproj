@@ -349,6 +349,7 @@
     <Content Include="Views\Comment\LeaveComment.cshtml" />
     <Content Include="Views\Author\AuthorAbout.cshtml" />
     <Content Include="Views\Author\AuthorPopularPost.cshtml" />
+    <Content Include="Views\Category\BlogDetailsCategoryList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
