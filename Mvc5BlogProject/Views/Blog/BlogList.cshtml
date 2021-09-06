@@ -23,7 +23,7 @@
                                 <span>&nbsp;-&nbsp; @x.BlogDate</span>
                             </div>
 
-                            <p>@x.BlogContent</p>
+                            <p>@x.BlogContent.Substring(0,x.BlogContent.Substring(0,200).LastIndexOf(" "))...</p>
                             <p><a href="#">Read More</a></p>
                         </div>
                     </div>
