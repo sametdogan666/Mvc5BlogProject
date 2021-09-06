@@ -48,5 +48,10 @@ namespace Mvc5BlogProject.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult BlogByCategory()
+        {
+            return View();
+        }
     }
 }
