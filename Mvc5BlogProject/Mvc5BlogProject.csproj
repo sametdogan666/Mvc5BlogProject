@@ -350,6 +350,8 @@
     <Content Include="Views\Author\AuthorAbout.cshtml" />
     <Content Include="Views\Author\AuthorPopularPost.cshtml" />
     <Content Include="Views\Category\BlogDetailsCategoryList.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\MeetTheTeam.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
