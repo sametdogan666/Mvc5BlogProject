@@ -175,6 +175,8 @@
     <Content Include="miniblog\miniblog\fonts\icomoon\fonts\icomoon.svg" />
     <Content Include="miniblog\miniblog\fonts\icomoon\Read Me.txt" />
     <Content Include="miniblog\miniblog\fonts\icomoon\style.css" />
+    <Content Include="miniblog\miniblog\images\Blog Sesleri-logos.jpeg" />
+    <Content Include="miniblog\miniblog\images\Blog Sesleri-logos_black.png" />
     <Content Include="miniblog\miniblog\images\cebupacific-booking.jpg" />
     <Content Include="miniblog\miniblog\images\hero_1.jpg" />
     <Content Include="miniblog\miniblog\images\img_1.jpg" />
