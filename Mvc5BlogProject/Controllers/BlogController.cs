@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using PagedList;
+using PagedList.Mvc;
 
 namespace Mvc5BlogProject.Controllers
 {
@@ -16,9 +18,9 @@ namespace Mvc5BlogProject.Controllers
             return View();
         }
 
-        public PartialViewResult BlogList()
+        public PartialViewResult BlogList(int page = 1)
         {
-            var blogList = _blogManager.GetAll();
+            var blogList = _blogManager.GetAll().OrderByDescending(x=>x.BlogDate).ToPagedList(page,6);
             return PartialView(blogList);
         }
 

@@ -1,10 +1,13 @@
-﻿@model IEnumerable<Entities.Concrete.Blog>
-@{ string color="";}
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IEnumerable<Entities.Concrete.Blog>
+
+@{ string color = "";}
 <div class="site-section">
     <div class="container">
         <div class="row mb-5">
             <div class="col-12">
-                <h2>Yakın Zamanda Eklenenler</h2>
+                <h2>Son Eklenenler</h2>
             </div>
         </div>
         <div class="row">
@@ -43,7 +46,7 @@
                                 <span>&nbsp;-&nbsp; @(((DateTime)x.BlogDate).ToString("dd-MMM-yyyy"))</span>
                             </div>
 
-                            <p>@x.BlogContent.Substring(0,x.BlogContent.Substring(0,200).LastIndexOf(" "))...</p>
+                            <p>@x.BlogContent.Substring(0, x.BlogContent.Substring(0, 200).LastIndexOf(" "))...</p>
                             <p><a href="#">Devamını Oku</a></p>
                         </div>
                     </div>
@@ -52,3 +55,5 @@
         </div>
     </div>
 </div>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
