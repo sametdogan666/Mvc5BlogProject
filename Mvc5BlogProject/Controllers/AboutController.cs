@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Business.Concrete;
 
 namespace Mvc5BlogProject.Controllers
 {
@@ -16,7 +17,9 @@ namespace Mvc5BlogProject.Controllers
 
         public PartialViewResult Footer()
         {
-            return PartialView();
+            AboutManager aboutManager = new AboutManager();
+            var aboutContentList = aboutManager.GetAll();
+            return PartialView(aboutContentList);
         }
 
         public PartialViewResult MeetTheTeam()
