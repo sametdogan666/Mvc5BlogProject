@@ -92,11 +92,6 @@ namespace Mvc5BlogProject.Controllers
             return PartialView();
         }
 
-        public PartialViewResult MailSubscribe()
-        {
-            return PartialView();
-        }
-
         public ActionResult BlogDetails()
         {
             return View();
