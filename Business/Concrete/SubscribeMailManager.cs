@@ -13,7 +13,7 @@ namespace Business.Concrete
         Repository<SubscribeMail> repositorySubscribeMail =new Repository<SubscribeMail>();
         public int Add(SubscribeMail subscribeMail)
         {
-            if (subscribeMail.Mail.Length<=10 && subscribeMail.Mail.Length>=50)
+            if (subscribeMail.Mail.Length<=10 || subscribeMail.Mail.Length >=50)
             {
                 return -1;
             }

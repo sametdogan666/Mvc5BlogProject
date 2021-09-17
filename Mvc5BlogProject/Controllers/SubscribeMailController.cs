@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Business.Concrete;
 using Entities.Concrete;
 
 namespace Mvc5BlogProject.Controllers
@@ -18,6 +19,8 @@ namespace Mvc5BlogProject.Controllers
         [HttpPost]
         public PartialViewResult AddMail(SubscribeMail subscribeMail)
         {
+            SubscribeMailManager subscribeMailManager = new SubscribeMailManager();
+            subscribeMailManager.Add(subscribeMail);
             return PartialView();
         }
     }
