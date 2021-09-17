@@ -61,10 +61,18 @@
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\BlogContext.cs" />
     <Compile Include="Concrete\Repository.cs" />
+    <Compile Include="Migrations\202109171229564_migSubscribeMail.cs" />
+    <Compile Include="Migrations\202109171229564_migSubscribeMail.designer.cs">
+      <DependentUpon>202109171229564_migSubscribeMail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202109171229564_migSubscribeMail.resx">
+      <DependentUpon>202109171229564_migSubscribeMail.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
