@@ -21,5 +21,15 @@ namespace Business.Concrete
         {
             return commentRepository.List(x => x.BlogId == id);
         }
+
+        public int CommentAdd(Comment comment)
+        {
+            if (comment.CommentText.Length <=3 || comment.CommentText.Length >=300 || comment.UserName == "" || comment.Email == "" || comment.UserName.Length <= 3)
+            {
+                return -1;
+            }
+
+            return commentRepository.Insert(comment);
+        }
     }
 }

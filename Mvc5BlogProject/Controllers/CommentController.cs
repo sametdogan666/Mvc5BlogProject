@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using Entities.Concrete;
 
 namespace Mvc5BlogProject.Controllers
 {
@@ -17,8 +18,17 @@ namespace Mvc5BlogProject.Controllers
             return PartialView(commentList);
         }
 
-        public PartialViewResult LeaveComment()
+        [HttpGet]
+        public PartialViewResult LeaveComment(int id)
         {
+            ViewBag.id = id;
+            return PartialView();
+        }
+
+        [HttpPost]
+        public PartialViewResult LeaveComment(Comment comment)
+        {
+            commentManager.CommentAdd(comment);
             return PartialView();
         }
     }
