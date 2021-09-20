@@ -103,9 +103,10 @@ namespace Mvc5BlogProject.Controllers
             return PartialView();
         }
 
-        public PartialViewResult BlogReadAll()
+        public PartialViewResult BlogReadAll(int id)
         {
-            return PartialView();
+            var blogDetailsList = _blogManager.BlogById(id);
+            return PartialView(blogDetailsList);
         }
 
         public ActionResult BlogByCategory()
