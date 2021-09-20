@@ -65,12 +65,19 @@
     <Compile Include="Migrations\202109171229564_migSubscribeMail.designer.cs">
       <DependentUpon>202109171229564_migSubscribeMail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109202058470_migCommentDate.cs" />
+    <Compile Include="Migrations\202109202058470_migCommentDate.designer.cs">
+      <DependentUpon>202109202058470_migCommentDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202109171229564_migSubscribeMail.resx">
       <DependentUpon>202109171229564_migSubscribeMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109202058470_migCommentDate.resx">
+      <DependentUpon>202109202058470_migCommentDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
