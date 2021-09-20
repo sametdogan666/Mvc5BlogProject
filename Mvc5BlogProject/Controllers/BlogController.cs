@@ -94,6 +94,7 @@ namespace Mvc5BlogProject.Controllers
 
         public ActionResult BlogDetails()
         {
+
             return View();
         }
 
