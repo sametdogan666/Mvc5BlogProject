@@ -17,9 +17,9 @@ namespace Business.Concrete
             return blogRepository.List();
         }
 
-        public List<Blog> BlogById(int id)
+        public List<Blog> GetBlogById(int id)
         {
-            return blogRepository.List().Where(x => x.BlogId == id).ToList();
+            return blogRepository.List(x => x.BlogId == id);
         }
     }
 }
