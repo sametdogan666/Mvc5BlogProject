@@ -26,5 +26,10 @@ namespace Business.Concrete
         {
             return blogRepository.List(x => x.AuthorId == id);
         }
+
+        public List<Blog> GetBlogByCategory(int id)
+        {
+            return blogRepository.List(x => x.CategoryId == id);
+        }
     }
 }
