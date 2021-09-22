@@ -17,9 +17,12 @@ namespace Mvc5BlogProject.Controllers
             return PartialView(authorDetail);
         }
 
-        public PartialViewResult AuthorPopularPost()
+        public PartialViewResult AuthorPopularPost(int id)
         {
-            return PartialView();
+            var blogAuthorId = _blogManager.GetAll().Where(x => x.BlogId == id).Select(y => y.AuthorId)
+                .FirstOrDefault();
+            var authorBlogs = _blogManager.GetBlogByAuthor(blogAuthorId);
+            return PartialView(authorBlogs);
         }
     }
 }
