@@ -12,7 +12,9 @@ namespace Mvc5BlogProject.Controllers
         // GET: About
         public ActionResult Index()
         {
-            return View();
+            AboutManager aboutManager = new AboutManager();
+            var aboutContent = aboutManager.GetAll();
+            return View(aboutContent);
         }
 
         public PartialViewResult Footer()
@@ -24,7 +26,9 @@ namespace Mvc5BlogProject.Controllers
 
         public PartialViewResult MeetTheTeam()
         {
-            return PartialView();
+            AuthorManager authorManager = new AuthorManager();
+            var authorList = authorManager.GetAll();
+            return PartialView(authorList);
         }
     }
 }
