@@ -113,6 +113,10 @@ namespace Mvc5BlogProject.Controllers
         public ActionResult BlogByCategory(int id)
         {
             var blogListByCategorry = _blogManager.GetBlogByCategory(id);
+            var categoryName = _blogManager.GetBlogByCategory(id).Select(y => y.Category.CategoryName).FirstOrDefault();
+            var categoryDesc = _blogManager.GetBlogByCategory(id).Select(y => y.Category.CategoryDescription).FirstOrDefault();
+            ViewBag.categoryName = categoryName;
+            ViewBag.categoryDesc = categoryDesc;
             return View(blogListByCategorry);
         }
     }
