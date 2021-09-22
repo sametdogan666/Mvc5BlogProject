@@ -73,6 +73,10 @@
     <Compile Include="Migrations\202109220848488_migCategoryDescription.designer.cs">
       <DependentUpon>202109220848488_migCategoryDescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109221341030_migAuthorSocialMedia.cs" />
+    <Compile Include="Migrations\202109221341030_migAuthorSocialMedia.designer.cs">
+      <DependentUpon>202109221341030_migAuthorSocialMedia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109220848488_migCategoryDescription.resx">
       <DependentUpon>202109220848488_migCategoryDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109221341030_migAuthorSocialMedia.resx">
+      <DependentUpon>202109221341030_migAuthorSocialMedia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

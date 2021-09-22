@@ -20,7 +20,16 @@ namespace Entities.Concrete
        
         [StringLength(250)]
         public string AuthorAbout { get; set; }
-       
+
+        [StringLength(300)]
+        public string AuthorInstagram { get; set; }
+
+        [StringLength(300)]
+        public string AuthorTwitter { get; set; }
+
+        [StringLength(300)]
+        public string AuthorGmail { get; set; }
+
         public ICollection<Blog> Blogs { get; set; }
 
 
