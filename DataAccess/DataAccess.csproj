@@ -69,6 +69,10 @@
     <Compile Include="Migrations\202109202058470_migCommentDate.designer.cs">
       <DependentUpon>202109202058470_migCommentDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109220848488_migCategoryDescription.cs" />
+    <Compile Include="Migrations\202109220848488_migCategoryDescription.designer.cs">
+      <DependentUpon>202109220848488_migCategoryDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109202058470_migCommentDate.resx">
       <DependentUpon>202109202058470_migCommentDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109220848488_migCategoryDescription.resx">
+      <DependentUpon>202109220848488_migCategoryDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
