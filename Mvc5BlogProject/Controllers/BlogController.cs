@@ -160,5 +160,27 @@ namespace Mvc5BlogProject.Controllers
             _blogManager.DeleteBlogBM(id);
             return RedirectToAction("AdminBlogList");
         }
+
+        public ActionResult UpdateBlog(int id)
+        {
+            Blog blog = _blogManager.FindBlog(id);
+            BlogContext blogContext = new BlogContext();
+            List<SelectListItem> values = (from x in blogContext.Categories.ToList()
+                select new SelectListItem()
+                {
+                    Text = x.CategoryName,
+                    Value = x.CategoryId.ToString()
+                }).ToList();
+            ViewBag.values = values;
+
+            List<SelectListItem> values2 = (from x in blogContext.Authors.ToList()
+                select new SelectListItem()
+                {
+                    Text = x.AuthorName,
+                    Value = x.AuthorId.ToString()
+                }).ToList();
+            ViewBag.values2 = values2;
+            return View(blog);
+        }
     }
 }

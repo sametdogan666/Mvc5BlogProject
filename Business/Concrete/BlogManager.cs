@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,6 +46,11 @@ namespace Business.Concrete
         {
             Blog blog = blogRepository.Find(x => x.BlogId == id);
             return blogRepository.Delete(blog);
+        }
+
+        public Blog FindBlog(int id)
+        {
+            return blogRepository.Find(x => x.BlogId == id);
         }
     }
 }
