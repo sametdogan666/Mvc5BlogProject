@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using Entities.Concrete;
 using PagedList;
 using PagedList.Mvc;
 
@@ -124,6 +125,16 @@ namespace Mvc5BlogProject.Controllers
         {
             var blogList = _blogManager.GetAll();
             return View(blogList);
+        }
+        [HttpGet]
+        public ActionResult AddNewBlog()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddNewBlog(Blog blog)
+        {
+            return View();
         }
     }
 }

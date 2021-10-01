@@ -17,19 +17,19 @@
         <th>Detaylar</th>
         <th>Yorumlar</th>
     </tr>
-    @foreach(var item in Model)
-            {
-                <tr>
-                    <td>@item.BlogId</td>
-                    <td>@item.BlogTitle</td>
-                    <td>@item.Category.CategoryName</td>
-                    <td>@item.BlogDate.ToShortDateString()</td>
-                    <td><a href="" class="btn btn-danger">Sil</a></td>
-                    <td><a href="" class="btn btn-success">Güncelle</a></td>
-                    <td><a href="" class="btn btn-warning">Detaylar</a></td>
-                    <td><a href="" class="btn btn-dark">Yorumlar</a></td>
-                </tr>
-            }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BlogId</td>
+            <td>@item.BlogTitle</td>
+            <td>@item.Category.CategoryName</td>
+            <td>@item.BlogDate.ToShortDateString()</td>
+            <td><a href="" class="btn btn-danger">Sil</a></td>
+            <td><a href="" class="btn btn-success">Güncelle</a></td>
+            <td><a href="" class="btn btn-warning">Detaylar</a></td>
+            <td><a href="" class="btn btn-dark">Yorumlar</a></td>
+        </tr>
+    }
 </table>
-<a href="" class="btn btn-primary">Yeni Blog Ekle</a>
+<a href="/Blog/AddNewBlog/" class="btn btn-secondary">Yeni Blog Ekle</a>
 
