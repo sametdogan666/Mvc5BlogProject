@@ -122,7 +122,8 @@ namespace Mvc5BlogProject.Controllers
 
         public ActionResult AdminBlogList()
         {
-            return View();
+            var blogList = _blogManager.GetAll();
+            return View(blogList);
         }
     }
 }
