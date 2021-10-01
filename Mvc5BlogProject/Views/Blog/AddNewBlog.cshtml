@@ -10,7 +10,7 @@
     @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
     <br />
     @Html.Label("Kategori")
-    @Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })
+    @Html.DropDownListFor(x=>x.CategoryId,(List<SelectListItem>)ViewBag.values, new{@class="form-control"})
     <br />
     @Html.Label("Resim Yolu")
     @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })

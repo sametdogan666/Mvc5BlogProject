@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using DataAccess.Concrete;
 using Entities.Concrete;
 using PagedList;
 using PagedList.Mvc;
@@ -129,6 +130,14 @@ namespace Mvc5BlogProject.Controllers
         [HttpGet]
         public ActionResult AddNewBlog()
         {
+           BlogContext blogContext = new BlogContext();
+           List<SelectListItem> values = (from x in blogContext.Categories.ToList()
+               select new SelectListItem()
+               {
+                   Text = x.CategoryName,
+                   Value = x.CategoryId.ToString()
+               }).ToList();
+           ViewBag.values = values;
             return View();
         }
         [HttpPost]
