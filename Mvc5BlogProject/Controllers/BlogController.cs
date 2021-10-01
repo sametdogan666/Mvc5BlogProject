@@ -137,13 +137,14 @@ namespace Mvc5BlogProject.Controllers
                    Text = x.CategoryName,
                    Value = x.CategoryId.ToString()
                }).ToList();
-           ViewBag.values = values;
+            ViewBag.values = values;
             return View();
         }
         [HttpPost]
         public ActionResult AddNewBlog(Blog blog)
         {
-            return View();
+            _blogManager.BlogAddBM(blog);
+            return RedirectToAction("AdminBlogList");
         }
     }
 }

@@ -31,5 +31,15 @@ namespace Business.Concrete
         {
             return blogRepository.List(x => x.CategoryId == id);
         }
+
+        public int BlogAddBM(Blog blog)
+        {
+            if (blog.BlogTitle == "" || blog.BlogImage == "" || blog.BlogTitle.Length <= 5 || blog.BlogContent.Length <= 200)
+            {
+                return -1;
+            }
+
+            return blogRepository.Insert(blog);
+        }
     }
 }
