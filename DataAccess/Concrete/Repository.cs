@@ -35,6 +35,11 @@ namespace DataAccess.Concrete
             return _object.Where(filter).ToList();
         }
 
+        public T Find(Expression<Func<T, bool>> @where)
+        {
+            return _object.FirstOrDefault(where);
+        }
+
         public int Insert(T p)
         {
             _object.Add(p);

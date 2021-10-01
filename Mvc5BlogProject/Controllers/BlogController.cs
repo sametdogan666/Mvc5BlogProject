@@ -138,12 +138,26 @@ namespace Mvc5BlogProject.Controllers
                    Value = x.CategoryId.ToString()
                }).ToList();
             ViewBag.values = values;
+
+            List<SelectListItem> values2 = (from x in blogContext.Authors.ToList()
+                select new SelectListItem()
+                {
+                    Text = x.AuthorName,
+                    Value = x.AuthorId.ToString()
+                }).ToList();
+            ViewBag.values2 = values2;
             return View();
         }
         [HttpPost]
         public ActionResult AddNewBlog(Blog blog)
         {
             _blogManager.BlogAddBM(blog);
+            return RedirectToAction("AdminBlogList");
+        }
+
+        public ActionResult DeleteBlog(int id)
+        {
+            _blogManager.DeleteBlogBM(id);
             return RedirectToAction("AdminBlogList");
         }
     }
