@@ -58,6 +58,11 @@ namespace Business.Concrete
             Blog _blog = blogRepository.Find(x => x.BlogId == blog.BlogId);
             _blog.BlogTitle = blog.BlogTitle;
             _blog.BlogContent = blog.BlogContent;
+            _blog.BlogDate = blog.BlogDate;
+            _blog.BlogImage = blog.BlogImage;
+            _blog.CategoryId = blog.CategoryId;
+            _blog.AuthorId = blog.AuthorId;
+
             return blogRepository.Update(_blog);
         }
     }

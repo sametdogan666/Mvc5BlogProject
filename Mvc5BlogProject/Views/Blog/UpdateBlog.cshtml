@@ -22,7 +22,7 @@
     @Html.TextBoxFor(x => x.BlogDate, new {@class = "form-control"})
     <br/>
     @Html.Label("Yazar")
-    @*@Html.DropDownListFor(x => x.AuthorId, (List<SelectListItem>) ViewBag.values2, new {@class = "form-control"})*@
+    @Html.DropDownListFor(x => x.AuthorId, (List<SelectListItem>) ViewBag.values2, new {@class = "form-control"})
     <br/>
     @Html.Label("İçerik")
     @Html.TextAreaFor(x => x.BlogContent, 10, 40, new {@class = "form-control"})
