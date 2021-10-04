@@ -189,5 +189,12 @@ namespace Mvc5BlogProject.Controllers
             _blogManager.UpdateBlog(blog);
             return RedirectToAction("AdminBlogList");
         }
+
+        public ActionResult GetCommentByBlog(int id)
+        {
+            CommentManager commentManager = new CommentManager();
+            var commentList = commentManager.CommentByBlog(id);
+            return View(commentList);
+        }
     }
 }
