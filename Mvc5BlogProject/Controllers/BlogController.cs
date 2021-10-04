@@ -161,6 +161,7 @@ namespace Mvc5BlogProject.Controllers
             return RedirectToAction("AdminBlogList");
         }
 
+        [HttpGet]
         public ActionResult UpdateBlog(int id)
         {
             Blog blog = _blogManager.FindBlog(id);
@@ -181,6 +182,12 @@ namespace Mvc5BlogProject.Controllers
                 }).ToList();
             ViewBag.values2 = values2;
             return View(blog);
+        }
+        [HttpPost]
+        public ActionResult UpdateBlog(Blog blog)
+        {
+            _blogManager.UpdateBlog(blog);
+            return RedirectToAction("AdminBlogList");
         }
     }
 }

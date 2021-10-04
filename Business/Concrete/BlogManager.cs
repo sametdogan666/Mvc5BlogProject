@@ -52,5 +52,13 @@ namespace Business.Concrete
         {
             return blogRepository.Find(x => x.BlogId == id);
         }
+
+        public int UpdateBlog(Blog blog)
+        {
+            Blog _blog = blogRepository.Find(x => x.BlogId == blog.BlogId);
+            _blog.BlogTitle = blog.BlogTitle;
+            _blog.BlogContent = blog.BlogContent;
+            return blogRepository.Update(_blog);
+        }
     }
 }
