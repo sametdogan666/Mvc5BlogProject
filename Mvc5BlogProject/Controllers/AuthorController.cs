@@ -11,6 +11,7 @@ namespace Mvc5BlogProject.Controllers
     {
         // GET: Author
         BlogManager _blogManager = new BlogManager();
+        AuthorManager _authorManager = new AuthorManager();
         public PartialViewResult AuthorAbout(int id)
         {
             var authorDetail = _blogManager.GetBlogById(id);
@@ -23,6 +24,12 @@ namespace Mvc5BlogProject.Controllers
                 .FirstOrDefault();
             var authorBlogs = _blogManager.GetBlogByAuthor(blogAuthorId);
             return PartialView(authorBlogs);
+        }
+
+        public ActionResult AuthorList()
+        {
+            var results = _authorManager.GetAll();
+            return View(results);
         }
     }
 }
