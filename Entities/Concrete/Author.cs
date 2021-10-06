@@ -21,14 +21,26 @@ namespace Entities.Concrete
         [StringLength(250)]
         public string AuthorAbout { get; set; }
 
-        [StringLength(300)]
+        [StringLength(100)]
         public string AuthorInstagram { get; set; }
 
-        [StringLength(300)]
+        [StringLength(100)]
         public string AuthorTwitter { get; set; }
 
-        [StringLength(300)]
+        [StringLength(50)]
         public string AuthorGmail { get; set; }
+
+        [StringLength(50)] 
+        public string AuthorTitle { get; set; }
+
+        [StringLength(100)] 
+        public string AboutShort { get; set; }
+
+        [StringLength(50)] 
+        public string Password { get; set; }
+        
+        [StringLength(20)]
+        public string PhoneNumber { get; set; }
 
         public ICollection<Blog> Blogs { get; set; }
 
