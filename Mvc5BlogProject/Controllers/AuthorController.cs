@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using Entities.Concrete;
 
 namespace Mvc5BlogProject.Controllers
 {
@@ -30,6 +31,17 @@ namespace Mvc5BlogProject.Controllers
         {
             var results = _authorManager.GetAll();
             return View(results);
+        }
+        [HttpGet]
+        public ActionResult AddAuthor()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddAuthor(Author author)
+        {
+            _authorManager.Add(author);
+            return RedirectToAction("AuthorList");
         }
     }
 }
