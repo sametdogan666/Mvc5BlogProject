@@ -29,5 +29,11 @@ namespace Business.Concrete
 
             return repositoryAuthor.Insert(author);
         }
+
+        //Yazari id degerine gore edit sayfasina tasima
+        public Author FindAuthor(int id)
+        {
+            return repositoryAuthor.Find(x => x.AuthorId == id);
+        }
     }
 }

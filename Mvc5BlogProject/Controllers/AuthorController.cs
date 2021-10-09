@@ -43,5 +43,16 @@ namespace Mvc5BlogProject.Controllers
             _authorManager.Add(author);
             return RedirectToAction("AuthorList");
         }
+        [HttpGet]
+        public ActionResult AuthorEdit(int id)
+        {
+            Author author = _authorManager.FindAuthor(id);
+            return View(author);
+        }
+        [HttpPost]
+        public ActionResult AuthorEdit(Author author)
+        {
+            return View();
+        }
     }
 }
