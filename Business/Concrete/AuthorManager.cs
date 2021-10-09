@@ -35,5 +35,21 @@ namespace Business.Concrete
         {
             return repositoryAuthor.Find(x => x.AuthorId == id);
         }
+
+        public int EditAuthor(Author author)
+        {
+            Author _author = repositoryAuthor.Find(x => x.AuthorId == author.AuthorId);
+            _author.AboutShort = author.AboutShort;
+            _author.AuthorName = author.AuthorName;
+            _author.AuthorImage = author.AuthorImage;
+            _author.AuthorAbout = author.AuthorAbout;
+            _author.AuthorTitle = author.AuthorTitle;
+            _author.AuthorGmail = author.AuthorGmail;
+            _author.AuthorTwitter = author.AuthorTwitter;
+            _author.AuthorInstagram = author.AuthorInstagram;
+            _author.Password = author.Password;
+            _author.PhoneNumber = author.PhoneNumber;
+            return repositoryAuthor.Update(_author);
+        }
     }
 }

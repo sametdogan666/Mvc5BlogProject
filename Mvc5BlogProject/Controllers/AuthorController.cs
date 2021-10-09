@@ -52,7 +52,8 @@ namespace Mvc5BlogProject.Controllers
         [HttpPost]
         public ActionResult AuthorEdit(Author author)
         {
-            return View();
+            _authorManager.EditAuthor(author);
+            return RedirectToAction("AuthorList");
         }
     }
 }
