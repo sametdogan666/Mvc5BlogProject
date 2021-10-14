@@ -27,6 +27,11 @@ namespace Business.Concrete
             return commentRepository.List(x => x.CommentStatus == true);
         }
 
+        public List<Comment> CommentByStatusFalse()
+        {
+            return commentRepository.List(x => x.CommentStatus == false);
+        }
+
         public int CommentAdd(Comment comment)
         {
             if (comment.CommentText.Length <= 3 || comment.CommentText.Length >= 300 || comment.UserName == "" || comment.Email == "" || comment.UserName.Length <= 3)
@@ -41,6 +46,13 @@ namespace Business.Concrete
         {
             Comment comment = commentRepository.Find(x => x.CommentId == id);
             comment.CommentStatus = false;
+            return commentRepository.Update(comment);
+        }
+
+        public int CommentStatusChangeToTrue(int id)
+        {
+            Comment comment = commentRepository.Find(x => x.CommentId == id);
+            comment.CommentStatus = true;
             return commentRepository.Update(comment);
         }
     }
