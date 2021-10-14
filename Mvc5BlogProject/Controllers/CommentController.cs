@@ -34,10 +34,10 @@ namespace Mvc5BlogProject.Controllers
             return PartialView();
         }
 
-        public ActionResult AdminCommentList()
+        public ActionResult AdminCommentListTrue()
         {
             CommentManager commentManager = new CommentManager();
-            var commentList = commentManager.CommentList();
+            var commentList = commentManager.CommentByStatusTrue();
             return View(commentList);
         }
     }
