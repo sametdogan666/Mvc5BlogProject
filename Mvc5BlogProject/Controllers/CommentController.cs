@@ -40,5 +40,12 @@ namespace Mvc5BlogProject.Controllers
             var commentList = commentManager.CommentByStatusTrue();
             return View(commentList);
         }
+
+        public ActionResult StatusChangeToFalse(int id)
+        {
+            CommentManager commentManager = new CommentManager();
+            commentManager.CommentStatusChangeToFalse(id);
+            return RedirectToAction("AdminCommentListTrue");
+        }
     }
 }

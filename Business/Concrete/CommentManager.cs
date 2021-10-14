@@ -36,5 +36,12 @@ namespace Business.Concrete
 
             return commentRepository.Insert(comment);
         }
+
+        public int CommentStatusChangeToFalse(int id)
+        {
+            Comment comment = commentRepository.Find(x => x.CommentId == id);
+            comment.CommentStatus = false;
+            return commentRepository.Update(comment);
+        }
     }
 }
