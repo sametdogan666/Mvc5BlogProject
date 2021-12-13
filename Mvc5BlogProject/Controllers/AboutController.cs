@@ -30,5 +30,12 @@ namespace Mvc5BlogProject.Controllers
             var authorList = authorManager.GetAll();
             return PartialView(authorList);
         }
+
+        public ActionResult UpdateAbout()
+        {
+            AboutManager aboutManager = new AboutManager();
+            var aboutList = aboutManager.GetAll();
+            return View(aboutList);
+        }
     }
 }
