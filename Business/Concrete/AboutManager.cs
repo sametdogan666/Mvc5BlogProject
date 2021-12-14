@@ -10,11 +10,23 @@ namespace Business.Concrete
 {
     public class AboutManager
     {
-        Repository<About> repositoryAbout = new Repository<About>();
+        Repository<About> aboutRepository = new Repository<About>();
 
         public List<About> GetAll()
         {
-            return repositoryAbout.List();
+            return aboutRepository.List();
+        }
+
+        public int UpdateAbout(About about)
+        {
+            About _about = aboutRepository.Find(x => x.AboutId == about.AboutId);
+            _about.AboutContent1 = about.AboutContent1;
+            _about.AboutContent2 = about.AboutContent2;
+            _about.AboutImage1 = about.AboutImage1;
+            _about.AboutImage2 = about.AboutImage2;
+            _about.AboutId = about.AboutId;
+
+            return aboutRepository.Update(_about);
         }
     }
 }

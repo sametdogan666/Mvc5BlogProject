@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using Entities.Concrete;
 
 namespace Mvc5BlogProject.Controllers
 {
@@ -31,11 +32,20 @@ namespace Mvc5BlogProject.Controllers
             return PartialView(authorList);
         }
 
-        public ActionResult UpdateAbout()
+        [HttpGet]
+        public ActionResult UpdateAboutList()
         {
             AboutManager aboutManager = new AboutManager();
             var aboutList = aboutManager.GetAll();
             return View(aboutList);
         }
+
+        public ActionResult UpdateAbout(About about)
+        {
+            AboutManager aboutManager = new AboutManager();
+            aboutManager.UpdateAbout(about);
+            return View();
+        }
+
     }
 }
