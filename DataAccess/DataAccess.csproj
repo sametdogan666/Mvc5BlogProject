@@ -85,6 +85,10 @@
     <Compile Include="Migrations\202110111216536_migCommentStatusAdd.designer.cs">
       <DependentUpon>202110111216536_migCommentStatusAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112150505032_migMessageDate.cs" />
+    <Compile Include="Migrations\202112150505032_migMessageDate.designer.cs">
+      <DependentUpon>202112150505032_migMessageDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -106,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110111216536_migCommentStatusAdd.resx">
       <DependentUpon>202110111216536_migCommentStatusAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112150505032_migMessageDate.resx">
+      <DependentUpon>202112150505032_migMessageDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
