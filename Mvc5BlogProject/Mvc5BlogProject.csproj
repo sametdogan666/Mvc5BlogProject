@@ -2470,6 +2470,7 @@
     <Content Include="Views\Category\AdminCategoryList.cshtml" />
     <Content Include="Views\Blog\AdminBlogList2.cshtml" />
     <Content Include="Views\About\UpdateAbout.cshtml" />
+    <Content Include="Views\Contact\SendBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -27,5 +27,11 @@ namespace Mvc5BlogProject.Controllers
             _contactManager.Add(contact);
             return View();
         }
+
+        public ActionResult SendBox()
+        {
+            var messageList = _contactManager.GetAll();
+            return View(messageList);
+        }
     }
 }
