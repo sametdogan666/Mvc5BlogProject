@@ -33,18 +33,18 @@ namespace Mvc5BlogProject.Controllers
         }
 
         [HttpGet]
-        public ActionResult UpdateAboutList()
+        public ActionResult UpdateAbout()
         {
             AboutManager aboutManager = new AboutManager();
             var aboutList = aboutManager.GetAll();
             return View(aboutList);
         }
-
+        [HttpPost]
         public ActionResult UpdateAbout(About about)
         {
             AboutManager aboutManager = new AboutManager();
             aboutManager.UpdateAbout(about);
-            return View();
+            return RedirectToAction("UpdateAbout");
         }
 
     }
