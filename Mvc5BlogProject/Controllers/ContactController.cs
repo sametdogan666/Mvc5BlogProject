@@ -33,5 +33,10 @@ namespace Mvc5BlogProject.Controllers
             var messageList = _contactManager.GetAll();
             return View(messageList);
         }
+        public ActionResult MessageDetails(int id)
+        {
+            Contact contact = _contactManager.GetContactDetails(id);
+            return View();
+        }
     }
 }
