@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,13 @@ namespace Mvc5BlogProject.Controllers
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult Index()
+        UserProfileManager userProfile = new UserProfileManager();
+
+        public ActionResult Index(string p)
         {
-            return View();
+            p = "cemilekose@gmail.com";
+            var profileValues = userProfile.GetAuthorByMail(p);
+            return View(profileValues);
         }
     }
 }
