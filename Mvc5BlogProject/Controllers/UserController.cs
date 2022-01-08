@@ -12,11 +12,16 @@ namespace Mvc5BlogProject.Controllers
         // GET: User
         UserProfileManager userProfile = new UserProfileManager();
 
-        public ActionResult Index(string p)
+        public ActionResult Index()
         {
-            p = (string)Session["Mail"];   
+            return View();
+        }
+
+        public PartialViewResult Partial1(string p)
+        {
+            p = (string)Session["Mail"];
             var profileValues = userProfile.GetAuthorByMail(p);
-            return View(profileValues);
+            return PartialView(profileValues);
         }
     }
 }
