@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DataAccess.Concrete;
 using Mvc5BlogProject.Models;
 
 namespace Mvc5BlogProject.Controllers
@@ -18,6 +19,11 @@ namespace Mvc5BlogProject.Controllers
         public ActionResult VisualizeResult()
         {
             return Json(categoryList(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult VisualizeResult2()
+        {
+            return Json(BlogList(), JsonRequestBehavior.AllowGet);
         }
 
         public List<Class1> categoryList()
@@ -39,6 +45,31 @@ namespace Mvc5BlogProject.Controllers
                 BlogCount = 16
             });
             return c;
+        }
+
+        public List<Class2> BlogList()
+        {
+            List<Class2> cs2 = new List<Class2>();
+            using (var context = new BlogContext())
+            {
+                cs2 = context.Blogs.Select(x => new Class2
+                {
+                    BlogName = x.BlogTitle,
+                    Raiting = x.BlogRating
+                }).ToList();
+            }
+
+            return cs2;
+        }
+
+        public ActionResult Chart1()
+        {
+            return View();
+        }
+
+        public ActionResult Chart2()
+        {
+            return View();
         }
     }
 }
