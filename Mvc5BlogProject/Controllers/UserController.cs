@@ -14,7 +14,7 @@ namespace Mvc5BlogProject.Controllers
 
         public ActionResult Index(string p)
         {
-            p = "cemilekose@gmail.com";
+            p = (string)Session["Mail"];   
             var profileValues = userProfile.GetAuthorByMail(p);
             return View(profileValues);
         }
