@@ -34,11 +34,11 @@
                 <div class="main-hotair">
                     <div class="content-wthree">
                         <h2>Login Paneli</h2>
-                        <form action="#" method="post">
-                            <input type="text" class="text" name="text" placeholder="Mail Adresi" required="" autofocus>
-                            <input type="password" class="password" name="password" placeholder="Şifre" required="" autofocus>
+                       @using(Html.BeginForm("AuthorLogin", "Login", FormMethod.Post)) {
+                            <input type="text" class="text" name="AuthorGmail" placeholder="Mail Adresi" required="" autofocus>
+                            <input type="password" class="password" name="Password" placeholder="Şifre" required="" autofocus>
                             <button class="btn" type="submit">Giriş Yap</button>
-                        </form>
+                       }
 
                         <p class="account">Şifremi Unuttum? <a href="#signup">Şifre Gönder</a></p>
                     </div>
