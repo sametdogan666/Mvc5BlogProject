@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using DataAccess.Concrete;
 using Entities.Concrete;
 
 namespace Mvc5BlogProject.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         // GET: User
@@ -98,6 +100,13 @@ namespace Mvc5BlogProject.Controllers
         {
             _blogManager.BlogAddBM(blog);
             return RedirectToAction("BlogList");
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("AuthorLogin", "Login");
         }
 
     }
