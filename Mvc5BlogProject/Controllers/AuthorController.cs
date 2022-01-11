@@ -13,12 +13,15 @@ namespace Mvc5BlogProject.Controllers
         // GET: Author
         BlogManager _blogManager = new BlogManager();
         AuthorManager _authorManager = new AuthorManager();
+
+        [AllowAnonymous]
         public PartialViewResult AuthorAbout(int id)
         {
             var authorDetail = _blogManager.GetBlogById(id);
             return PartialView(authorDetail);
         }
 
+        [AllowAnonymous]
         public PartialViewResult AuthorPopularPost(int id)
         {
             var blogAuthorId = _blogManager.GetAll().Where(x => x.BlogId == id).Select(y => y.AuthorId)

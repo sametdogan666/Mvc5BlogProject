@@ -15,17 +15,21 @@ namespace Mvc5BlogProject.Controllers
     {
         // GET: Blog
         BlogManager _blogManager = new BlogManager();
+
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public PartialViewResult BlogList(int page = 1)
         {
             var blogList = _blogManager.GetAll().OrderByDescending(x=>x.BlogDate).ToPagedList(page,6);
             return PartialView(blogList);
         }
 
+        [AllowAnonymous]
         public PartialViewResult FeaturedPosts()
         {
             //1.Post
@@ -109,29 +113,34 @@ namespace Mvc5BlogProject.Controllers
             return PartialView();
         }
 
+        [AllowAnonymous]
         public PartialViewResult OtherFeaturedPosts()
         {
             return PartialView();
         }
 
+        [AllowAnonymous]
         public ActionResult BlogDetails()
         {
 
             return View();
         }
 
+        [AllowAnonymous]
         public PartialViewResult BlogCover(int id)
         {
             var blogDetailsList = _blogManager.GetBlogById(id);
             return PartialView(blogDetailsList);
         }
 
+        [AllowAnonymous]
         public PartialViewResult BlogReadAll(int id)
         {
             var blogDetailsList = _blogManager.GetBlogById(id);
             return PartialView(blogDetailsList);
         }
 
+        [AllowAnonymous]
         public ActionResult BlogByCategory(int id)
         {
             var blogListByCategorry = _blogManager.GetBlogByCategory(id);

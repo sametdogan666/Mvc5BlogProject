@@ -11,21 +11,21 @@ namespace Mvc5BlogProject.Controllers
     public class CommentController : Controller
     {
         // GET: Comment
-       
+        [AllowAnonymous]
         public PartialViewResult CommentList(int id)
         {
             CommentManager commentManager = new CommentManager();
             var commentList = commentManager.CommentByBlog(id);
             return PartialView(commentList);
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public PartialViewResult LeaveComment(int id)
         {
             ViewBag.id = id;
             return PartialView();
         }
-
+        [AllowAnonymous]
         [HttpPost]
         public PartialViewResult LeaveComment(Comment comment)
         {

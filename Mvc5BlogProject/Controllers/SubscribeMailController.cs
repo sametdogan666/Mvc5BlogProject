@@ -8,6 +8,7 @@ using Entities.Concrete;
 
 namespace Mvc5BlogProject.Controllers
 {
+    [AllowAnonymous]
     public class SubscribeMailController : Controller
     {
         [HttpGet]

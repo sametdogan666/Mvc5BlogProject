@@ -12,15 +12,21 @@ namespace Mvc5BlogProject.Controllers
     {
         // GET: Contact
         ContactManager _contactManager = new ContactManager();
+
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
+
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult SendMessage()
         {
             return View();
         }
+
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult SendMessage(Contact contact)
         {
