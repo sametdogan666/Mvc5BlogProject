@@ -27,6 +27,12 @@ namespace Mvc5BlogProject.Controllers
             return PartialView(profileValues);
         }
 
+        public ActionResult UpdateUserProfile(Author author)
+        {
+            userProfile.EditAuthor(author);
+            return RedirectToAction("Index");
+        }
+
         public ActionResult BlogList(string p)
         {
             p = (string)Session["Mail"];
