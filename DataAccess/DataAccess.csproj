@@ -93,6 +93,10 @@
     <Compile Include="Migrations\202201080910193_migBlogRating.designer.cs">
       <DependentUpon>202201080910193_migBlogRating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201111511561_migAdminRole.cs" />
+    <Compile Include="Migrations\202201111511561_migAdminRole.designer.cs">
+      <DependentUpon>202201111511561_migAdminRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -120,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201080910193_migBlogRating.resx">
       <DependentUpon>202201080910193_migBlogRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201111511561_migAdminRole.resx">
+      <DependentUpon>202201111511561_migAdminRole.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
