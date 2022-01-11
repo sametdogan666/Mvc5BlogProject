@@ -30,6 +30,7 @@ namespace Mvc5BlogProject.Controllers
         public PartialViewResult LeaveComment(Comment comment)
         {
             CommentManager commentManager = new CommentManager();
+            comment.CommentStatus = true;
             commentManager.CommentAdd(comment);
             return PartialView();
         }

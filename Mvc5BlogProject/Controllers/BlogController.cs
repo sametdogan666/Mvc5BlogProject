@@ -232,5 +232,10 @@ namespace Mvc5BlogProject.Controllers
             var commentList = commentManager.CommentByBlog(id);
             return View(commentList);
         }
+        public ActionResult AuthorBlogList(int id)
+        {
+            var blogs = _blogManager.GetBlogByAuthor(id);
+            return View(blogs);
+        }
     }
 }

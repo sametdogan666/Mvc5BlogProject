@@ -2065,6 +2065,7 @@
     <Content Include="miniblog\miniblog\images\Blog Sesleri-logos.jpeg" />
     <Content Include="miniblog\miniblog\images\Blog Sesleri-logos_black.png" />
     <Content Include="miniblog\miniblog\images\cebupacific-booking.jpg" />
+    <Content Include="miniblog\miniblog\images\circled-user-icon.jpg" />
     <Content Include="miniblog\miniblog\images\hero_1.jpg" />
     <Content Include="miniblog\miniblog\images\img_1.jpg" />
     <Content Include="miniblog\miniblog\images\img_2.jpg" />
@@ -2619,6 +2620,7 @@
     <Content Include="web403\README.markdown" />
     <Content Include="Views\Error\Page403.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
+    <Content Include="Views\Blog\AuthorBlogList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
