@@ -142,6 +142,7 @@
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SubscribeMailController.cs" />
@@ -2428,6 +2429,15 @@
     <Content Include="loginForm\Report-Login-Free\fonts\fontawesome-webfont.woff" />
     <Content Include="loginForm\Report-Login-Free\fonts\fontawesome-webfont.woff2" />
     <Content Include="loginForm\Report-Login-Free\fonts\FontAwesome.otf" />
+    <Content Include="web403\dist\index.html" />
+    <Content Include="web403\dist\style.css" />
+    <Content Include="web403\license.txt" />
+    <Content Include="web403\src\index.html" />
+    <Content Include="web403\src\style.css" />
+    <Content Include="web404\css\style.css" />
+    <Content Include="web404\images\board.png" />
+    <Content Include="web404\index.html" />
+    <Content Include="web404\w3layouts-License.txt" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2499,6 +2509,9 @@
     <Content Include="Views\User\BlogList.cshtml" />
     <Content Include="Views\User\UpdateBlog.cshtml" />
     <Content Include="Views\User\AddNewBlog.cshtml" />
+    <Content Include="Views\Error\Page404.cshtml" />
+    <Content Include="web403\README.markdown" />
+    <Content Include="Views\Error\Page403.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

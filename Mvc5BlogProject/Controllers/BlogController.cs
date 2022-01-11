@@ -37,10 +37,14 @@ namespace Mvc5BlogProject.Controllers
                 .FirstOrDefault();
             var postCategory1 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 4).Select(y => y.Category.CategoryName)
                 .FirstOrDefault();
+            var blogPostId1 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 4)
+                .Select(y => y.BlogId).FirstOrDefault();
+
             ViewBag.postTitle1 = postTitle1;
             ViewBag.postImage1 = postImage1;
             ViewBag.blogDate1 = blogDate1;
             ViewBag.postCategory1 = postCategory1;
+            ViewBag.blogPostId1 = blogPostId1;
 
             //2.Post
             var postTitle2 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 1).Select(y => y.BlogTitle)
@@ -49,9 +53,13 @@ namespace Mvc5BlogProject.Controllers
                 .FirstOrDefault();
             var blogDate2 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 1).Select(y => y.BlogDate)
                 .FirstOrDefault();
+            var blogPostId2 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 1)
+                .Select(y => y.BlogId).FirstOrDefault();
+
             ViewBag.postTitle2 = postTitle2;
             ViewBag.postImage2 = postImage2;
             ViewBag.blogDate2 = blogDate2;
+            ViewBag.blogPostId2 = blogPostId2;
 
             //3.Post
             var postTitle3 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 3).Select(y => y.BlogTitle)
@@ -60,9 +68,13 @@ namespace Mvc5BlogProject.Controllers
                 .FirstOrDefault();
             var blogDate3 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 3).Select(y => y.BlogDate)
                 .FirstOrDefault();
+            var blogPostId3 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 3)
+                .Select(y => y.BlogId).FirstOrDefault();
+
             ViewBag.postTitle3 = postTitle3;
             ViewBag.postImage3 = postImage3;
             ViewBag.blogDate3 = blogDate3;
+            ViewBag.blogPostId3 = blogPostId3;
 
             //4.Post
             var postTitle4 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 6).Select(y => y.BlogTitle)
@@ -71,9 +83,13 @@ namespace Mvc5BlogProject.Controllers
                 .FirstOrDefault();
             var blogDate4 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 6).Select(y => y.BlogDate)
                 .FirstOrDefault();
+            var blogPostId4 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 6)
+                .Select(y => y.BlogId).FirstOrDefault();
+
             ViewBag.postTitle4 = postTitle4;
             ViewBag.postImage4 = postImage4;
             ViewBag.blogDate4 = blogDate4;
+            ViewBag.blogPostId4 = blogPostId4;
 
             //5.Post
             var postTitle5 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 5).Select(y => y.BlogTitle)
@@ -82,9 +98,13 @@ namespace Mvc5BlogProject.Controllers
                 .FirstOrDefault();
             var blogDate5 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 5).Select(y => y.BlogDate)
                 .FirstOrDefault();
+            var blogPostId5 = _blogManager.GetAll().OrderByDescending(z => z.BlogId).Where(x => x.CategoryId == 5)
+                .Select(y => y.BlogId).FirstOrDefault();
+
             ViewBag.postTitle5 = postTitle5;
             ViewBag.postImage5 = postImage5;
             ViewBag.blogDate5 = blogDate5;
+            ViewBag.blogPostId5 = blogPostId5;
 
             return PartialView();
         }
