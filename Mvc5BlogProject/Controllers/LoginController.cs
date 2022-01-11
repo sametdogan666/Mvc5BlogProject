@@ -34,5 +34,11 @@ namespace Mvc5BlogProject.Controllers
             }
           
         }
+
+        [HttpGet]
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
     }
 }
