@@ -9,6 +9,7 @@ using System.Web.Security;
 
 namespace Mvc5BlogProject.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
@@ -39,6 +40,23 @@ namespace Mvc5BlogProject.Controllers
         public ActionResult AdminLogin()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult AdminLogin(Admin admin)
+        {
+            BlogContext blogContext = new BlogContext();
+            var admınInfo = blogContext.Admins.FirstOrDefault(x => x.UserName == admin.UserName && x.Password == admin.Password);
+            if (admınInfo != null)
+            {
+                FormsAuthentication.SetAuthCookie(admınInfo.UserName, false);
+                Session["UserName"] = admınInfo.UserName.ToString();
+                return RedirectToAction("AdminBlogList", "Blog");
+            }
+            else
+            {
+                return RedirectToAction("AdminLogin", "Login");
+            }
+
         }
     }
 }

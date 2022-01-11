@@ -141,19 +141,19 @@ namespace Mvc5BlogProject.Controllers
             ViewBag.categoryDesc = categoryDesc;
             return View(blogListByCategorry);
         }
-
+   
         public ActionResult AdminBlogList()
         {
             var blogList = _blogManager.GetAll();
             return View(blogList);
         }
-
+     
         public ActionResult AdminBlogList2()
         {
             var blogList = _blogManager.GetAll();
             return View(blogList);
         }
-
+        
         [HttpGet]
         public ActionResult AddNewBlog()
         {
