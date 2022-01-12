@@ -43,5 +43,18 @@ namespace Mvc5BlogProject.Controllers
             categoryManager.CategoryAdd(category);
             return RedirectToAction("AdminCategoryList");
         }
+
+        [HttpGet]
+        public ActionResult CategoryEdit(int id)
+        {
+            Category category = categoryManager.FindCategory(id);
+            return View(category);
+        }
+        [HttpPost]
+        public ActionResult CategoryEdit(Category category)
+        {
+            categoryManager.EditCategory(category);
+            return RedirectToAction("AdminCategoryList");
+        }
     }
 }
