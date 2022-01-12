@@ -5,6 +5,8 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+@{ string color = "";}
+
 <!DOCTYPE html>
 
 <html>
@@ -66,7 +68,7 @@
 
                             </th>
 
-                            <th  style="width: 20%">
+                            <th style="width: 20%">
 
                                 Kategori Bar
 
@@ -89,6 +91,15 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
+
+                            if (item.CategoryStatus == true)
+                            {
+                                color = "post-category text-white bg-success mb-3";
+                            }
+                            if (item.CategoryStatus == false)
+                            {
+                                color = "post-category text-white bg-danger mb-3";
+                            }
                             <tr>
 
                                 <td>@item.CategoryId</td>
@@ -141,7 +152,7 @@
 
                                 <td class="project-state">
 
-                                    <span class="badge badge-success">Success</span>
+                                    <span class="badge @color">@item.CategoryStatus</span>
 
                                 </td>
 
@@ -203,7 +214,7 @@
                         <input type="text" name="CategoryDescription" class="form-control" />
                         <br />
                         <button class="btn btn-info">Kaydet</button>
-                    </div>              
+                    </div>
                 </form>
             </div>
         </div>
