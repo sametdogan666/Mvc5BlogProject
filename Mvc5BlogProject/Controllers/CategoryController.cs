@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using Entities.Concrete;
 
 namespace Mvc5BlogProject.Controllers
 {
@@ -28,6 +29,19 @@ namespace Mvc5BlogProject.Controllers
         {
             var categoryList = categoryManager.GetAll();
             return View(categoryList);
+        }
+
+        [HttpGet]
+        public ActionResult AdminCategoryAdd()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AdminCategoryAdd(Category category)
+        {
+            categoryManager.CategoryAdd(category);
+            return RedirectToAction("AdminCategoryList");
         }
     }
 }
