@@ -56,5 +56,11 @@ namespace Mvc5BlogProject.Controllers
             categoryManager.EditCategory(category);
             return RedirectToAction("AdminCategoryList");
         }
+
+        public ActionResult CategoryDelete(int id)
+        {
+            categoryManager.DeleteCategory(id);
+            return RedirectToAction("AdminCategoryList");
+        }
     }
 }

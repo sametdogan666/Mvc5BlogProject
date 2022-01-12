@@ -97,6 +97,10 @@
     <Compile Include="Migrations\202201111511561_migAdminRole.designer.cs">
       <DependentUpon>202201111511561_migAdminRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201121523579_migCategoryStatus.cs" />
+    <Compile Include="Migrations\202201121523579_migCategoryStatus.designer.cs">
+      <DependentUpon>202201121523579_migCategoryStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -127,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201111511561_migAdminRole.resx">
       <DependentUpon>202201111511561_migAdminRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201121523579_migCategoryStatus.resx">
+      <DependentUpon>202201121523579_migCategoryStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
