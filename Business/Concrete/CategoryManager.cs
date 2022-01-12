@@ -44,11 +44,20 @@ namespace Business.Concrete
             return repoCategory.Update(_category);
         }
 
-        public int DeleteCategory(int id)
+        public int CategoryStatusFalse(int id)
         {
             Category _category = repoCategory.Find(x => x.CategoryId == id);
 
             _category.CategoryStatus = false;
+
+            return repoCategory.Update(_category);
+        }
+
+        public int CategoryStatusTrue(int id)
+        {
+            Category _category = repoCategory.Find(x => x.CategoryId == id);
+
+            _category.CategoryStatus = true;
 
             return repoCategory.Update(_category);
         }

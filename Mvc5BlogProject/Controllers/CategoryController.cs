@@ -59,7 +59,13 @@ namespace Mvc5BlogProject.Controllers
 
         public ActionResult CategoryDelete(int id)
         {
-            categoryManager.DeleteCategory(id);
+            categoryManager.CategoryStatusFalse(id);
+            return RedirectToAction("AdminCategoryList");
+        }
+
+        public ActionResult CategoryStatusTrue(int id)
+        {
+            categoryManager.CategoryStatusTrue(id);
             return RedirectToAction("AdminCategoryList");
         }
     }
