@@ -163,6 +163,7 @@ namespace Mvc5BlogProject.Controllers
             return View(blogList);
         }
         
+        [Authorize(Roles = "A")]
         [HttpGet]
         public ActionResult AddNewBlog()
         {

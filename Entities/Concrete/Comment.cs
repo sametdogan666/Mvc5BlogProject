@@ -25,6 +25,8 @@ namespace Entities.Concrete
 
         public bool CommentStatus { get; set; }
 
+        public int BlogRating { get; set; }
+
         public int BlogId { get; set; }
        
         public virtual Blog Blogs { get; set; }
