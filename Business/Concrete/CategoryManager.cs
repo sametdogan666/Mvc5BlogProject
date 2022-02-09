@@ -3,17 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Abstract;
+using DataAccess.Abstract;
 using DataAccess.Concrete;
 using Entities.Concrete;
 
 namespace Business.Concrete
 {
-    public class CategoryManager
+    public class CategoryManager : ICategoryService
     {
         Repository<Category> repoCategory = new Repository<Category>();
+
+        private ICategoryDal _categoryDal;
+
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
+
+
         public List<Category> GetAll()
         {
-            return repoCategory.List();
+            return _categoryDal.List();
+        }
+
+        public void Add(Category category)
+        {
+            _categoryDal.Insert(category);
+        }
+
+        public Category GetById(int id)
+        {
+            return _categoryDal.GetById(id);
+        }
+
+        public void Delete(Category category)
+        {
+            _categoryDal.Delete(category);
+        }
+
+        public void Update(Category category)
+        {
+            _categoryDal.Delete(category);
         }
 
         public int CategoryAdd(Category category)
@@ -34,7 +65,7 @@ namespace Business.Concrete
         public int EditCategory(Category category)
         {
             Category _category = repoCategory.Find(x => x.CategoryId == category.CategoryId);
-            if (category.CategoryName == "" || category.CategoryName.Length <=3 || category.CategoryDescription.Length <= 20)
+            if (category.CategoryName == "" || category.CategoryName.Length <= 3 || category.CategoryDescription.Length <= 20)
             {
                 return -1;
             }

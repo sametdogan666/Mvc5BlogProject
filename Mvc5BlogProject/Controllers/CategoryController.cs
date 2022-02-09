@@ -4,14 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using Business.ValidationRules;
+using DataAccess.EntityFramework;
 using Entities.Concrete;
+using FluentValidation.Results;
 
 namespace Mvc5BlogProject.Controllers
 {
     public class CategoryController : Controller
     {
         // GET: Category
-        CategoryManager categoryManager = new CategoryManager();
+        CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         public ActionResult Index()
         {
             var categoryValues = categoryManager.GetAll();
@@ -40,8 +43,23 @@ namespace Mvc5BlogProject.Controllers
         [HttpPost]
         public ActionResult AdminCategoryAdd(Category category)
         {
-            categoryManager.CategoryAdd(category);
-            return RedirectToAction("AdminCategoryList");
+            CategoryValidator categoryValidator = new CategoryValidator();
+            ValidationResult results = categoryValidator.Validate(category);
+            if (results.IsValid)
+            {
+                categoryManager.CategoryAdd(category);
+                return RedirectToAction("AdminCategoryList");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();
+
         }
 
         [HttpGet]
@@ -53,8 +71,23 @@ namespace Mvc5BlogProject.Controllers
         [HttpPost]
         public ActionResult CategoryEdit(Category category)
         {
-            categoryManager.EditCategory(category);
-            return RedirectToAction("AdminCategoryList");
+            CategoryValidator categoryValidator = new CategoryValidator();
+            ValidationResult results = categoryValidator.Validate(category);
+            if (results.IsValid)
+            {
+                categoryManager.EditCategory(category);
+                return RedirectToAction("AdminCategoryList");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();
+
         }
 
         public ActionResult CategoryDelete(int id)
