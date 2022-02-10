@@ -17,7 +17,7 @@ namespace Business.Concrete
             return aboutRepository.List();
         }
 
-        public int UpdateAbout(About about)
+        public void UpdateAbout(About about)
         {
             About _about = aboutRepository.Find(x => x.AboutId == about.AboutId);
             _about.AboutContent1 = about.AboutContent1;
@@ -26,7 +26,7 @@ namespace Business.Concrete
             _about.AboutImage2 = about.AboutImage2;
             _about.AboutId = about.AboutId;
 
-            return aboutRepository.Update(_about);
+            aboutRepository.Update(_about);
         }
     }
 }

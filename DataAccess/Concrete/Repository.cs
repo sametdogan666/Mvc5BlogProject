@@ -19,10 +19,10 @@ namespace DataAccess.Concrete
         {
             _object = blogContext.Set<T>();
         }
-        public int Delete(T p)
+        public void Delete(T p)
         {
             _object.Remove(p);
-            return blogContext.SaveChanges();
+            blogContext.SaveChanges();
         }
 
         public T GetById(int id)
@@ -40,10 +40,10 @@ namespace DataAccess.Concrete
             return _object.FirstOrDefault(where);
         }
 
-        public int Insert(T p)
+        public void Insert(T p)
         {
             _object.Add(p);
-            return blogContext.SaveChanges();
+            blogContext.SaveChanges();
         }
 
         public List<T> List()
@@ -51,9 +51,9 @@ namespace DataAccess.Concrete
             return _object.ToList();
         }
 
-        public int Update(T p)
+        public void Update(T p)
         {
-            return blogContext.SaveChanges();
+            blogContext.SaveChanges();
         }
     }
 }

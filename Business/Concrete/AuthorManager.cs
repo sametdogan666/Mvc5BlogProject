@@ -19,15 +19,15 @@ namespace Business.Concrete
         }
 
         //Yeni Yazar Ekleme Islemi
-        public int Add(Author author)
+        public void Add(Author author)
         {
             //Parametreden Gonderilen Degerlerin Gecerliliginin Kontrolu
-            if (author.AuthorName == "" || author.AboutShort == "" || author.AuthorTitle == "")
-            {
-                return -1;
-            }
+            //if (author.AuthorName == "" || author.AboutShort == "" || author.AuthorTitle == "")
+            //{
+            //    return -1;
+            //}
 
-            return repositoryAuthor.Insert(author);
+            repositoryAuthor.Insert(author);
         }
 
         //Yazari id degerine gore edit sayfasina tasima
@@ -36,7 +36,7 @@ namespace Business.Concrete
             return repositoryAuthor.Find(x => x.AuthorId == id);
         }
 
-        public int EditAuthor(Author author)
+        public void EditAuthor(Author author)
         {
             Author _author = repositoryAuthor.Find(x => x.AuthorId == author.AuthorId);
             _author.AboutShort = author.AboutShort;
@@ -49,7 +49,7 @@ namespace Business.Concrete
             _author.AuthorInstagram = author.AuthorInstagram;
             _author.Password = author.Password;
             _author.PhoneNumber = author.PhoneNumber;
-            return repositoryAuthor.Update(_author);
+            repositoryAuthor.Update(_author);
         }
     }
 }

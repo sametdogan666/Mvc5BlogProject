@@ -23,7 +23,7 @@ namespace Business.Concrete
             return repoUserBlog.List(x => x.AuthorId == id);
         }
 
-        public int EditAuthor(Author author)
+        public void EditAuthor(Author author)
         {
             Author _author = repoUser.Find(x => x.AuthorId == author.AuthorId);
             _author.AboutShort = author.AboutShort;
@@ -36,7 +36,7 @@ namespace Business.Concrete
             _author.AuthorInstagram = author.AuthorInstagram;
             _author.Password = author.Password;
             _author.PhoneNumber = author.PhoneNumber;
-            return repoUser.Update(_author);
+            repoUser.Update(_author);
         }
     }
 }

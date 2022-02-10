@@ -12,14 +12,14 @@ namespace Business.Concrete
     {
         Repository<Contact> repositoryContact = new Repository<Contact>();
 
-        public int Add(Contact contact)
+        public void Add(Contact contact)
         {
-            if (contact.Mail == "" || contact.Message == "" || contact.Name == "" || contact.Subject == "" || contact.Surname == "" || contact.Mail.Length <= 10 || contact.Subject.Length < 3)
-            {
-                return -1;
-            }
+            //if (contact.Mail == "" || contact.Message == "" || contact.Name == "" || contact.Subject == "" || contact.Surname == "" || contact.Mail.Length <= 10 || contact.Subject.Length < 3)
+            //{
+            //    return -1;
+            //}
 
-            return repositoryContact.Insert(contact);
+            repositoryContact.Insert(contact);
         }
 
         public List<Contact> GetAll()

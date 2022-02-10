@@ -32,20 +32,20 @@ namespace Business.Concrete
             return blogRepository.List(x => x.CategoryId == id);
         }
 
-        public int BlogAddBM(Blog blog)
+        public void BlogAddBM(Blog blog)
         {
-            if (blog.BlogTitle == "" || blog.BlogImage == "" || blog.BlogTitle.Length <= 5 || blog.BlogContent.Length <= 200)
-            {
-                return -1;
-            }
+            //if (blog.BlogTitle == "" || blog.BlogImage == "" || blog.BlogTitle.Length <= 5 || blog.BlogContent.Length <= 200)
+            //{
+            //    return -1;
+            //}
 
-            return blogRepository.Insert(blog);
+            blogRepository.Insert(blog);
         }
 
-        public int DeleteBlogBM(int id)
+        public void DeleteBlogBM(int id)
         {
             Blog blog = blogRepository.Find(x => x.BlogId == id);
-            return blogRepository.Delete(blog);
+            blogRepository.Delete(blog);
         }
 
         public Blog FindBlog(int id)
@@ -53,7 +53,7 @@ namespace Business.Concrete
             return blogRepository.Find(x => x.BlogId == id);
         }
 
-        public int UpdateBlog(Blog blog)
+        public void UpdateBlog(Blog blog)
         {
             Blog _blog = blogRepository.Find(x => x.BlogId == blog.BlogId);
             _blog.BlogTitle = blog.BlogTitle;
@@ -63,7 +63,7 @@ namespace Business.Concrete
             _blog.CategoryId = blog.CategoryId;
             _blog.AuthorId = blog.AuthorId;
 
-            return blogRepository.Update(_blog);
+            blogRepository.Update(_blog);
         }
     }
 }

@@ -32,28 +32,28 @@ namespace Business.Concrete
             return commentRepository.List(x => x.CommentStatus == false);
         }
 
-        public int CommentAdd(Comment comment)
+        public void CommentAdd(Comment comment)
         {
-            if (comment.CommentText.Length <= 3 || comment.CommentText.Length >= 300 || comment.UserName == "" || comment.Email == "" || comment.UserName.Length <= 3)
-            {
-                return -1;
-            }
+            //if (comment.CommentText.Length <= 3 || comment.CommentText.Length >= 300 || comment.UserName == "" || comment.Email == "" || comment.UserName.Length <= 3)
+            //{
+            //    return -1;
+            //}
 
-            return commentRepository.Insert(comment);
+            commentRepository.Insert(comment);
         }
 
-        public int CommentStatusChangeToFalse(int id)
+        public void CommentStatusChangeToFalse(int id)
         {
             Comment comment = commentRepository.Find(x => x.CommentId == id);
             comment.CommentStatus = false;
-            return commentRepository.Update(comment);
+            commentRepository.Update(comment);
         }
 
-        public int CommentStatusChangeToTrue(int id)
+        public void CommentStatusChangeToTrue(int id)
         {
             Comment comment = commentRepository.Find(x => x.CommentId == id);
             comment.CommentStatus = true;
-            return commentRepository.Update(comment);
+            commentRepository.Update(comment);
         }
     }
 }

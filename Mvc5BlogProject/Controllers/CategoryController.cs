@@ -47,7 +47,7 @@ namespace Mvc5BlogProject.Controllers
             ValidationResult results = categoryValidator.Validate(category);
             if (results.IsValid)
             {
-                categoryManager.CategoryAdd(category);
+                categoryManager.Add(category);
                 return RedirectToAction("AdminCategoryList");
             }
             else
@@ -75,7 +75,7 @@ namespace Mvc5BlogProject.Controllers
             ValidationResult results = categoryValidator.Validate(category);
             if (results.IsValid)
             {
-                categoryManager.EditCategory(category);
+                categoryManager.Update(category);
                 return RedirectToAction("AdminCategoryList");
             }
             else
