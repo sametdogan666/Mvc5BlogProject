@@ -34,7 +34,7 @@ namespace Business.Concrete
 
         public Author GetById(int id)
         {
-            throw new NotImplementedException();
+            return _authorDal.GetById(id);
         }
 
         public void Delete(Author author)
@@ -44,29 +44,8 @@ namespace Business.Concrete
 
         public void Update(Author author)
         {
-            throw new NotImplementedException();
+            _authorDal.Update(author);
         }
 
-        //Yazari id degerine gore edit sayfasina tasima
-        public Author FindAuthor(int id)
-        {
-            return repositoryAuthor.Find(x => x.AuthorId == id);
-        }
-
-        public void EditAuthor(Author author)
-        {
-            Author _author = repositoryAuthor.Find(x => x.AuthorId == author.AuthorId);
-            _author.AboutShort = author.AboutShort;
-            _author.AuthorName = author.AuthorName;
-            _author.AuthorImage = author.AuthorImage;
-            _author.AuthorAbout = author.AuthorAbout;
-            _author.AuthorTitle = author.AuthorTitle;
-            _author.AuthorGmail = author.AuthorGmail;
-            _author.AuthorTwitter = author.AuthorTwitter;
-            _author.AuthorInstagram = author.AuthorInstagram;
-            _author.Password = author.Password;
-            _author.PhoneNumber = author.PhoneNumber;
-            repositoryAuthor.Update(_author);
-        }
     }
 }
