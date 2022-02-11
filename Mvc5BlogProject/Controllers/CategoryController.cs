@@ -15,11 +15,6 @@ namespace Mvc5BlogProject.Controllers
     {
         // GET: Category
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-        public ActionResult Index()
-        {
-            var categoryValues = categoryManager.GetAll();
-            return View(categoryValues);
-        }
 
         [AllowAnonymous]
         public PartialViewResult BlogDetailsCategoryList()
@@ -65,7 +60,7 @@ namespace Mvc5BlogProject.Controllers
         [HttpGet]
         public ActionResult CategoryEdit(int id)
         {
-            Category category = categoryManager.FindCategory(id);
+            Category category = categoryManager.GetById(id);
             return View(category);
         }
         [HttpPost]

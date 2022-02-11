@@ -46,14 +46,7 @@ namespace Business.Concrete
         {
             _categoryDal.Update(category);
         }
-
-
-        public Category FindCategory(int id)
-        {
-            return repoCategory.Find(x => x.CategoryId == id);
-        }
-
-
+        
         public void CategoryStatusFalse(int id)
         {
             Category _category = repoCategory.Find(x => x.CategoryId == id);
