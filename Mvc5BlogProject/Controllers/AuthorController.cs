@@ -4,7 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using Business.ValidationRules;
+using DataAccess.EntityFramework;
 using Entities.Concrete;
+using FluentValidation.Results;
 
 namespace Mvc5BlogProject.Controllers
 {
@@ -12,7 +15,7 @@ namespace Mvc5BlogProject.Controllers
     {
         // GET: Author
         BlogManager _blogManager = new BlogManager();
-        AuthorManager _authorManager = new AuthorManager();
+        AuthorManager _authorManager = new AuthorManager(new EfAuthorDal());
 
         [AllowAnonymous]
         public PartialViewResult AuthorAbout(int id)
@@ -43,8 +46,24 @@ namespace Mvc5BlogProject.Controllers
         [HttpPost]
         public ActionResult AddAuthor(Author author)
         {
-            _authorManager.Add(author);
-            return RedirectToAction("AuthorList");
+            AuthorValidator authorValidator = new AuthorValidator();
+            ValidationResult results = authorValidator.Validate(author);
+            if (results.IsValid)
+            {
+                _authorManager.Add(author);
+                return RedirectToAction("AuthorList");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();
+
+           
         }
         [HttpGet]
         public ActionResult AuthorEdit(int id)

@@ -3,31 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Abstract;
+using DataAccess.Abstract;
 using DataAccess.Concrete;
 using Entities.Concrete;
 
 namespace Business.Concrete
 {
-    public class AuthorManager
+    public class AuthorManager : IAuthorService
     {
+        private IAuthorDal _authorDal;
         Repository<Author> repositoryAuthor = new Repository<Author>();
+
+        public AuthorManager(IAuthorDal authorDal)
+        {
+            _authorDal = authorDal;
+        }
 
         //Tum Yazar Listesini Getirme
         public List<Author> GetAll()
         {
-            return repositoryAuthor.List();
+            return _authorDal.List();
         }
 
         //Yeni Yazar Ekleme Islemi
         public void Add(Author author)
         {
-            //Parametreden Gonderilen Degerlerin Gecerliliginin Kontrolu
-            //if (author.AuthorName == "" || author.AboutShort == "" || author.AuthorTitle == "")
-            //{
-            //    return -1;
-            //}
+            _authorDal.Insert(author);
+        }
 
-            repositoryAuthor.Insert(author);
+        public Author GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Author author)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Author author)
+        {
+            throw new NotImplementedException();
         }
 
         //Yazari id degerine gore edit sayfasina tasima

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using DataAccess.EntityFramework;
 using Entities.Concrete;
 
 namespace Mvc5BlogProject.Controllers
@@ -28,7 +29,7 @@ namespace Mvc5BlogProject.Controllers
 
         public PartialViewResult MeetTheTeam()
         {
-            AuthorManager authorManager = new AuthorManager();
+            AuthorManager authorManager = new AuthorManager(new EfAuthorDal());
             var authorList = authorManager.GetAll();
             return PartialView(authorList);
         }
