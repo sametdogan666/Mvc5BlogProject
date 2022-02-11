@@ -21,7 +21,8 @@ namespace DataAccess.Concrete
         }
         public void Delete(T p)
         {
-            _object.Remove(p);
+            var deletedEntity = blogContext.Entry(p);
+            deletedEntity.State = EntityState.Deleted;
             blogContext.SaveChanges();
         }
 
@@ -42,7 +43,8 @@ namespace DataAccess.Concrete
 
         public void Insert(T p)
         {
-            _object.Add(p);
+            var addedEntity = blogContext.Entry(p);
+            addedEntity.State = EntityState.Added;
             blogContext.SaveChanges();
         }
 
@@ -53,6 +55,8 @@ namespace DataAccess.Concrete
 
         public void Update(T p)
         {
+            var updatedEntity = blogContext.Entry(p);
+            updatedEntity.State = EntityState.Modified;
             blogContext.SaveChanges();
         }
     }
