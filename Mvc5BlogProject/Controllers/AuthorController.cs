@@ -14,7 +14,7 @@ namespace Mvc5BlogProject.Controllers
     public class AuthorController : Controller
     {
         // GET: Author
-        BlogManager _blogManager = new BlogManager();
+        BlogManager _blogManager = new BlogManager(new EfBlogDal());
         AuthorManager _authorManager = new AuthorManager(new EfAuthorDal());
 
         [AllowAnonymous]

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using DataAccess.Concrete;
+using DataAccess.EntityFramework;
 using Entities.Concrete;
 
 namespace Mvc5BlogProject.Controllers
@@ -15,7 +16,7 @@ namespace Mvc5BlogProject.Controllers
     {
         // GET: User
         UserProfileManager userProfile = new UserProfileManager();
-        BlogManager _blogManager = new BlogManager();
+        BlogManager _blogManager = new BlogManager(new EfBlogDal());
 
         public ActionResult Index()
         {

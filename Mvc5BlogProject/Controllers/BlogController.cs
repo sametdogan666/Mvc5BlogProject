@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
 using DataAccess.Concrete;
+using DataAccess.EntityFramework;
 using Entities.Concrete;
 using PagedList;
 using PagedList.Mvc;
@@ -14,7 +15,7 @@ namespace Mvc5BlogProject.Controllers
     public class BlogController : Controller
     {
         // GET: Blog
-        BlogManager _blogManager = new BlogManager();
+        BlogManager _blogManager = new BlogManager(new EfBlogDal());
 
         [AllowAnonymous]
         public ActionResult Index()
