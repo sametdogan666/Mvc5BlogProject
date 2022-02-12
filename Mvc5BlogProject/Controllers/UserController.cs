@@ -48,7 +48,7 @@ namespace Mvc5BlogProject.Controllers
         [HttpGet]
         public ActionResult UpdateBlog(int id)
         {
-            Blog blog = _blogManager.FindBlog(id);
+            Blog blog = _blogManager.GetById(id);
             BlogContext blogContext = new BlogContext();
             List<SelectListItem> values = (from x in blogContext.Categories.ToList()
                 select new SelectListItem()
@@ -70,7 +70,7 @@ namespace Mvc5BlogProject.Controllers
         [HttpPost]
         public ActionResult UpdateBlog(Blog blog)
         {
-            _blogManager.UpdateBlog(blog);
+            _blogManager.Update(blog);
             return RedirectToAction("BlogList");
         }
 

@@ -195,14 +195,15 @@ namespace Mvc5BlogProject.Controllers
 
         public ActionResult DeleteBlog(int id)
         {
-            _blogManager.DeleteBlogBM(id);
+            Blog blog = _blogManager.GetById(id);
+            _blogManager.Delete(blog);
             return RedirectToAction("AdminBlogList");
         }
 
         [HttpGet]
         public ActionResult UpdateBlog(int id)
         {
-            Blog blog = _blogManager.FindBlog(id);
+            Blog blog = _blogManager.GetById(id);
             BlogContext blogContext = new BlogContext();
             List<SelectListItem> values = (from x in blogContext.Categories.ToList()
                 select new SelectListItem()
@@ -224,7 +225,7 @@ namespace Mvc5BlogProject.Controllers
         [HttpPost]
         public ActionResult UpdateBlog(Blog blog)
         {
-            _blogManager.UpdateBlog(blog);
+            _blogManager.Update(blog);
             return RedirectToAction("AdminBlogList");
         }
 

@@ -32,17 +32,17 @@ namespace Business.Concrete
 
         public Blog GetById(int id)
         {
-            throw new NotImplementedException();
+            return _blogDal.GetById(id);
         }
 
         public void Delete(Blog blog)
         {
-            throw new NotImplementedException();
+           _blogDal.Delete(blog);
         }
 
         public void Update(Blog blog)
         {
-            throw new NotImplementedException();
+            _blogDal.Update(blog);
         }
 
         public List<Blog> GetBlogById(int id)
@@ -68,30 +68,6 @@ namespace Business.Concrete
             //}
 
             blogRepository.Insert(blog);
-        }
-
-        public void DeleteBlogBM(int id)
-        {
-            Blog blog = blogRepository.Find(x => x.BlogId == id);
-            blogRepository.Delete(blog);
-        }
-
-        public Blog FindBlog(int id)
-        {
-            return blogRepository.Find(x => x.BlogId == id);
-        }
-
-        public void UpdateBlog(Blog blog)
-        {
-            Blog _blog = blogRepository.Find(x => x.BlogId == blog.BlogId);
-            _blog.BlogTitle = blog.BlogTitle;
-            _blog.BlogContent = blog.BlogContent;
-            _blog.BlogDate = blog.BlogDate;
-            _blog.BlogImage = blog.BlogImage;
-            _blog.CategoryId = blog.CategoryId;
-            _blog.AuthorId = blog.AuthorId;
-
-            blogRepository.Update(_blog);
         }
     }
 }
